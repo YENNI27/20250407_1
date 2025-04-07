@@ -1,0 +1,82 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+canvas {
+  display: block;
+}
+
+/* Menu container */
+.menu {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 20px;
+}
+
+/* Menu items */
+.menu li {
+  list-style: none;
+  padding: 10px 20px;
+  background-color: #bde0fe;
+  color: black;
+  font-size: 20px;
+  border-radius: 10px;
+  border: 2px solid #ffb5a7;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Hover effects */
+.menu li:hover {
+  background-color: #cdb4db;
+  color: #0077b6;
+  border-color: #cdb4db;
+}
+
+/* Submenu styles */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #bde0fe;
+  border-radius: 10px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.submenu li {
+  padding: 10px 20px;
+  font-size: 20px;
+  border: 2px solid #ffb5a7;
+  border-radius: 10px;
+  margin: 5px 0;
+}
+
+.submenu li:hover {
+  background-color: #cdb4db;
+  color: #0077b6;
+  border-color: #d8e2dc;
+}
+
+/* Show submenu on hover */
+.dropdown:hover .submenu {
+  display: block;
+}
+
+.section {
+  margin: 50px;
+  font-size: 18px;
+}

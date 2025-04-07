@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Circles</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+  <script src="sketch.js" defer></script>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* 視窗樣式 */
+    .popup {
+      display: none; /* 預設隱藏 */
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      z-index: 1000;
+    }
+
+    .popup h2 {
+      margin: 0;
+      font-size: 24px;
+      color: #333;
+    }
+
+    .popup button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #0077b6;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .popup button:hover {
+      background-color: #005f8a;
+    }
+
+    /* 背景遮罩 */
+    .overlay {
+      display: none; /* 預設隱藏 */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+  <ul class="menu">
+    <li onclick="showHome()">首頁</li>
+    <li onclick="showIntro()">自我介紹</li>
+    <li class="dropdown">
+      作品集
+      <ul class="submenu">
+        <li><a href="https://yenni27.github.io/20250303/" target="_self">第一周作業</a></li>
+        <li><a href="https://yenni27.github.io/20250310/" target="_self">第二周作業</a></li>
+        <li><a href="https://yenni27.github.io/20250317/" target="_self">第三周作業</a></li>
+        <li><a href="https://yenni27.github.io/20250324/" target="_self">第四周作業</a></li>
+      </ul>
+    </li>
+    <li onclick="showQuiz()">測驗卷</li>
+    <li onclick="showVideos()">教學影片</li>
+  </ul>
+
+  <!-- 彈出視窗 -->
+  <div class="overlay" id="overlay"></div>
+  <div class="popup" id="popup">
+    <h2 id="popup-content"></h2>
+    <button onclick="closePopup()">關閉</button>
+  </div>
+
+  <script>
+    function showIntro() {
+      // 顯示自我介紹的彈出視窗
+      document.getElementById('popup-content').innerText = "你好，我是胡妍妮，這裡是我的自我介紹";
+      document.getElementById('popup').style.display = 'block';
+      document.getElementById('overlay').style.display = 'block';
+    }
+
+    function showHome() {
+      // 顯示首頁的彈出視窗
+      document.getElementById('popup-content').innerText = "你好，這裡顯示的是首頁";
+      document.getElementById('popup').style.display = 'block';
+      document.getElementById('overlay').style.display = 'block';
+    }
+
+    function closePopup() {
+      // 隱藏彈出視窗和背景遮罩
+      document.getElementById('popup').style.display = 'none';
+      document.getElementById('overlay').style.display = 'none';
+    }
+
+    // 其他功能可以根據需求添加
+    function showQuiz() {
+      console.log("測驗卷功能");
+    }
+
+    function showVideos() {
+      console.log("教學影片功能");
+    }
+  </script>
+</body>
+</html>
